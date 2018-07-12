@@ -1,0 +1,16 @@
+.anuales {
+    ion-card {
+        overflow: unset;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        button{
+            flex-grow: 1;
+        }
+        h2{
+            flex-grow: 2;
+            text-align: center;
+        }
+    }
+}
