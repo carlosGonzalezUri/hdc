@@ -27,14 +27,12 @@ export class Anuales implements OnInit{
     this.mes = this.mes + 1;
     if(this.mes == 13) this.mes = 1;
     this.mesActivo = this.obtenerNombreMes(this.mes);
-    console.log(this.mes);
   }
 
   previousMonth(){
     this.mes = this.mes - 1;
     if(this.mes == 0) this.mes = 12;
     this.mesActivo = this.obtenerNombreMes(this.mes);
-    console.log(this.mes);
   }
 
   obtenerNombreMes(i){

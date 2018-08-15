@@ -7,5 +7,44 @@
 </ion-header>
 
 <ion-content padding>
+  <div class="logo-hdc">
+    <img src="assets/imgs/logoHDCVerde.png" alt="">
+  </div>
+  <div *ngIf="!estamosEnFiestas()">
+
+    <div *ngIf="!esDia4()">
+      <h2 class="countdown">Cuenta atrás para fiestas</h2>
+    </div>
+
+    <div center class="esDia4" *ngIf="esDia4()">
+      <h1 class="countdown">¡Día cuatro que fuera!</h1>
+    </div>
+    <div>
+      <countdown [text]="text" [divider]="divider" units="Month | Days | Hours | Minutes | Seconds" end="September 5 16:00 {{anio}}"></countdown>
+    </div>
+  </div>
+
+  <div *ngIf="estamosEnFiestas()">
+    <h2 class="countdown">
+      ¡Estamos en fiestas!
+    </h2>
+    <div>
+      <div class="desfile-card">
+        <!-- DESFILE DÍA 5 -->
+        <ion-card *ngFor="let desf of desfile">
+          <ion-card-content *ngIf="desf.Dia === hoy">
+            <ion-card-title>
+              {{desf.Titulo}}
+            </ion-card-title>
+            Hora: {{desf.Hora}}
+            <br> Hora prevista de salida: {{desf.HoraSalida}}
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+    </div>
+
+
+  </div>
 
 </ion-content>

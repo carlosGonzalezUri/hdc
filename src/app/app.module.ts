@@ -4,20 +4,24 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { Fiestas } from '../pages/fiestas/fiestas';
-import { ContactPage } from '../pages/contact/contact';
+import { Septiembre } from '../pages/septiembre/septiembre';
 import { Anuales } from '../pages/anuales/anuales';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import {CountDown} from "ng4-date-countdown-timer";
+
+
 @NgModule({
   declarations: [
     MyApp,
     Fiestas,
-    ContactPage,
+    Septiembre,
     Anuales,
-    TabsPage
+    TabsPage,
+    CountDown
   ],
   imports: [
     BrowserModule,
@@ -27,7 +31,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   entryComponents: [
     MyApp,
     Fiestas,
-    ContactPage,
+    Septiembre,
     Anuales,
     TabsPage
   ],
