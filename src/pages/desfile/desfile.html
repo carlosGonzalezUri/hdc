@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img class="icon-header" src="assets/imgs/iconoWhite.png" alt=""></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div>
+    <div class="desfile-card">
+      <!-- DESFILE DÍA 5 -->
+      <ion-card *ngFor="let desf of desfile">
+        <ion-card-content>
+          <ion-card-title>
+            <p class="num-dia">
+              {{desf.Dia}}
+            </p>
+            {{desf.Titulo}}
+          </ion-card-title>
+          <div class="desfile-card-box">
+            <ion-icon name="time"></ion-icon> {{desf.Hora}} ( {{desf.HoraSalida}} )<br>
+            <div *ngIf="desf.Bloque != 0">
+              <ion-icon name="pin"></ion-icon> Bloque: {{desf.Bloque}} Fila: {{desf.Fila}}
+            </div>
+            <ion-icon name="map"></ion-icon> {{desf.Lugar}}<br>
+            <div *ngIf="desf.Indumentaria != 0">
+              <ion-icon name="man"></ion-icon> {{desf.Indumentaria}}
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+  </div>
+
+</ion-content>

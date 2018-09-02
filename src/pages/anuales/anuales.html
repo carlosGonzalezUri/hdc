@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img class="icon-header" src="assets/imgs/iconoWhite.png" alt=""></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="anuales">
+  <header>
+      <button ion-button outline  (click)="previousMonth()"><ion-icon name="arrow-dropleft"></ion-icon></button>
+      <h2>{{mesActivo}}</h2>
+      <button ion-button outline (click)="nextMonth()"><ion-icon name="arrow-dropright"></ion-icon></button>
+  </header>
+  
+  <div>
+    <ion-card *ngFor="let evento of eventosAnuales">
+      <!-- <img src="img/nin-live.png"/> -->
+        <ion-card-content *ngIf="evento.Mes === mes"> 
+          <ion-icon name="calendar"></ion-icon> {{evento.Dia}}           
+          <ion-card-title>
+            {{evento.Acto}}
+          </ion-card-title>
+          <p>
+            {{evento.Descripcion}}
+          </p>
+          <p>
+            
+            <br>
+            <ion-icon name="time"></ion-icon> A las {{evento.Hora}} en {{evento.Lugar}}
+          </p>
+        </ion-card-content>
+    </ion-card>
+  </div>
+  <!-- <p>
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p> -->
+</ion-content>

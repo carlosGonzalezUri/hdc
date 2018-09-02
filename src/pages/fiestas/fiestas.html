@@ -1,0 +1,62 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>
+      Fiestas
+    </ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content padding>
+  <div class="logo-hdc">
+    <img *ngIf="showLogo()" src="assets/imgs/logoV3.png" alt="">
+    <div *ngIf="mes === 9"><br>
+      <img *ngIf="hoy === 4" src="assets/imgs/dia4.png" alt="">
+      <img *ngIf="hoy === 5" src="assets/imgs/dia5.png" alt="">
+      <img *ngIf="hoy === 6" src="assets/imgs/dia6.png" alt="">
+      <img *ngIf="hoy === 7" src="assets/imgs/dia7.png" alt="">
+      <img *ngIf="hoy === 8" src="assets/imgs/dia8.png" alt="">
+      <img *ngIf="hoy === 9" src="assets/imgs/dia9.png" alt="">
+    </div>
+  </div>
+  <div *ngIf="!estamosEnFiestas()">
+
+    <div *ngIf="!esDia4()">
+      <h2 class="countdown">Cuenta atrás para fiestas</h2>
+    </div>
+
+    <div center class="esDia4" *ngIf="esDia4()">
+      <h1 class="countdown">¡Día cuatro que fuera!</h1>
+    </div>
+    <div>
+      <countdown [text]="text" [divider]="divider" units="Month | Days | Hours | Minutes | Seconds" end="September 5 16:00 {{anio}}"></countdown>
+    </div>
+  </div>
+
+  <div *ngIf="estamosEnFiestas()">
+    <h2 class="countdown">
+      ¡Estamos en fiestas!
+    </h2>
+    <div>
+      <div class="desfile-card">
+        <!-- DESFILE DÍA 5 -->
+        <ion-card *ngFor="let desf of desfile">
+          <ion-card-content *ngIf="desf.Dia === hoy">
+            <ion-card-title>
+              {{desf.Titulo}}
+            </ion-card-title>
+            Hora: {{desf.Hora}}<br>
+            Hora prevista de salida: {{desf.HoraSalida}}<br>
+            <div *ngIf="desf.Bloque != 0">
+                Bloque: {{desf.Bloque}} Fila: {{desf.Fila}}
+            </div>
+            En {{desf.Lugar}}            
+          </ion-card-content>
+        </ion-card>
+      </div>
+
+    </div>
+
+
+  </div>
+
+</ion-content>

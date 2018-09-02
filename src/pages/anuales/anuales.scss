@@ -1,0 +1,43 @@
+.anuales {
+    ion-card {
+        overflow: unset;
+    }
+    header {
+        display: flex;
+        align-items: center;
+        button{
+            flex-grow: 1;
+            color: rgb(0, 101, 53);
+            border-color:  rgb(0, 101, 53);
+        }
+        h2{
+            flex-grow: 2;
+            text-align: center;
+            width: 33%;
+            color:  rgb(0, 101, 53);
+        }
+        
+    }
+    ion-icon {
+        color: rgb(0, 70, 53);
+    }
+    .ion-ios-calendar:before {
+        color: blue;
+    }
+    ion-card-title {
+        color:rgb(0, 101, 53);
+    }
+    
+    
+}
+.icon-header {
+    max-width: 10%;
+    border: 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.toolbar-md {
+    padding: 1px;
+    min-height: 40px;
+}

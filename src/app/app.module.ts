@@ -3,37 +3,50 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
+import { Fiestas } from '../pages/fiestas/fiestas';
+import { Septiembre } from '../pages/septiembre/septiembre';
+import { Anuales } from '../pages/anuales/anuales';
+import { DesfilePage } from '../pages/desfile/desfile';
+
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+import {CountDown} from "ng4-date-countdown-timer";
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
+import { IonicStorageModule } from '@ionic/storage';
+
+
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
-    TabsPage
+    Fiestas,
+    Septiembre,
+    Anuales,
+    DesfilePage,
+    TabsPage,
+    CountDown
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
-    HomePage,
+    Fiestas,
+    Septiembre,
+    Anuales,
+    DesfilePage,
     TabsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
+    LocalNotifications,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

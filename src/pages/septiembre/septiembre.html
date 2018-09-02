@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title><img class="icon-header" src="assets/imgs/iconoWhite.png" alt=""></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="anuales">
+  <header>
+      <button ion-button outline  (click)="previousDay()"><ion-icon name="arrow-dropleft"></ion-icon></button>
+      <h2>
+        Día {{hoy}} 
+        <ion-icon name="shirt" *ngIf="hoy === 3"></ion-icon>
+        <ion-icon name="bowtie" *ngIf="hoy === 4"></ion-icon>
+        <ion-icon name="microphone" *ngIf="hoy === 5"></ion-icon>
+        <ion-icon name="moon" *ngIf="hoy === 6"></ion-icon>
+        <ion-icon name="musical-notes" *ngIf="hoy === 7"></ion-icon>
+        <ion-icon name="add" *ngIf="hoy === 8"></ion-icon>
+        <ion-icon name="trophy" *ngIf="hoy === 9"></ion-icon>
+
+
+      </h2>
+      <button ion-button outline (click)="nextDay()"><ion-icon name="arrow-dropright"></ion-icon></button>
+  </header>
+
+  <div *ngIf="!isDataLoaded()">
+      <ion-spinner name="bubbles"></ion-spinner>
+  </div>
+
+  <div *ngIf="isDataLoaded()">
+      <ion-card *ngFor="let evento of eventoSeptiembre">
+        <!-- <img src="img/nin-live.png"/> *ngIf="evento.Dia === hoy"-->
+          <ion-card-content *ngIf="evento.Dia === hoy"> 
+            <ion-icon name="calendar"></ion-icon> 
+              Día {{evento.Dia}}           
+            <ion-card-title>
+              {{evento.Acto}}
+            </ion-card-title>
+            <p>
+              {{evento.Descripcion}}
+            </p>
+            <p>
+              <br>
+              <ion-icon name="time"></ion-icon> A las {{evento.Hora}} en {{evento.Lugar}}              
+                <ion-icon *ngIf="evento.DiaSemana === 9" name="shirt"></ion-icon>
+            </p>
+          </ion-card-content>
+      </ion-card>
+    </div>
+  
+  <!-- <p>
+    This starter project comes with simple tabs-based layout for apps
+    that are going to primarily use a Tabbed UI.
+  </p>
+  <p>
+    Take a look at the <code>src/pages/</code> directory to add or change tabs,
+    update any existing page or create new pages.
+  </p> -->
+</ion-content>
