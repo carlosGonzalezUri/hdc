@@ -36,6 +36,12 @@ page-about {
     .card-title-md {
         color: white;
     }
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
 
     // /deep/ .countdown {
     //     width: 100%;

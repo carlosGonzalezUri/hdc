@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 import { Evento } from '../../assets/data/evento';
 import { EVENTOS } from '../../assets/data/eventosAnuales';
 
+import { LocalNotifications } from '@ionic-native/local-notifications';
+
 
 @Component({
   selector: 'page-home',
@@ -13,12 +15,14 @@ export class Anuales implements OnInit{
 
   today = new Date();
   mes = this.today.getMonth() + 1;
+  anio = this.today.getFullYear();
   eventosAnuales : Evento[] = EVENTOS;
   mesActivo = this.obtenerNombreMes(this.mes);
 
   constructor(public navCtrl: NavController) {
 
   }
+  
   ngOnInit(){
 
   }
@@ -49,13 +53,10 @@ export class Anuales implements OnInit{
     month[8] = "Septiembre";
     month[9] = "Octubre";
     month[10] = "Noviembre";
-    month[11] = "Deciembre";
+    month[11] = "Diciembre";
     
     return month[i];
   }
 
   
-
-  
-
 }

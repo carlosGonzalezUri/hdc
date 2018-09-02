@@ -14,39 +14,50 @@ export class Septiembre {
 
   }
 
-  today = new Date; 
+  today = new Date;
   hoy = this.onInit();
+  anio = this.today.getFullYear();
+  isToggled: true;
+  mes = this.today.getMonth() + 1;
 
-  eventoSeptiembre : EventoSeptiembre[] = EVENTOSSEPTIEMBRE;
 
-  onInit(){
-    if(this.estamosEnFiestas() ){
+  isChecked: any[];
+
+  eventoSeptiembre: EventoSeptiembre[] = EVENTOSSEPTIEMBRE;
+
+
+  onInit() {
+        
+    if (this.estamosEnFiestas()) {
       return this.today.getDate();
-    }else{
+    } else {
       return 3;
     }
   }
 
-  isDataLoaded(){
-    if(this.eventoSeptiembre == undefined){
+  isDataLoaded() {
+    if (this.eventoSeptiembre == undefined) {
       return false;
     }
     return true;
   }
 
-  nextDay(){
-    this.hoy = this.hoy + 1 ;
-    console.log(this.hoy)
-    if(this.hoy > 9) this.hoy = 9;
+  nextDay() {
+    this.hoy = this.hoy + 1;
+    if (this.hoy > 9) this.hoy = 9;
   }
 
-  previousDay(){
+  previousDay() {
     this.hoy = this.hoy - 1;
-    if(this.hoy < 3) this.hoy = 3;
+    if (this.hoy < 3) this.hoy = 3;
   }
 
   estamosEnFiestas(){
-    if(this.today.getMonth() === 9 && this.today.getDate() > 4 && this.today.getHours() > 16 && this.today.getDate() < 9){
+    // if(this.mes === 9 && this.today.getDate() > 4 && this.today.getHours() > 16 && this.today.getDate() < 9){
+    if(this.mes === 9 && this.today.getDate() > 4 && this.today.getDate() < 10){
+      if(this.today.getDate() === 5 && this.today.getHours() < 16) {
+        return false;
+      }
       return true;
     }
     return false;

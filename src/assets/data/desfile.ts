@@ -4,4 +4,7 @@ export class Desfile {
     Lugar: string;
     Hora: string;
     HoraSalida: string;    
+    Bloque: number;
+    Fila: number;
+    Indumentaria: string;
 }

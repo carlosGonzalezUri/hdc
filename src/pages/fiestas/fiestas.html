@@ -1,14 +1,22 @@
-<ion-header>
+<!-- <ion-header>
   <ion-navbar>
     <ion-title>
       Fiestas
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content padding>
   <div class="logo-hdc">
-    <img src="assets/imgs/logoHDCVerde.png" alt="">
+    <img *ngIf="showLogo()" src="assets/imgs/logoV3.png" alt="">
+    <div *ngIf="mes === 9"><br>
+      <img *ngIf="hoy === 4" src="assets/imgs/dia4.png" alt="">
+      <img *ngIf="hoy === 5" src="assets/imgs/dia5.png" alt="">
+      <img *ngIf="hoy === 6" src="assets/imgs/dia6.png" alt="">
+      <img *ngIf="hoy === 7" src="assets/imgs/dia7.png" alt="">
+      <img *ngIf="hoy === 8" src="assets/imgs/dia8.png" alt="">
+      <img *ngIf="hoy === 9" src="assets/imgs/dia9.png" alt="">
+    </div>
   </div>
   <div *ngIf="!estamosEnFiestas()">
 
@@ -36,8 +44,12 @@
             <ion-card-title>
               {{desf.Titulo}}
             </ion-card-title>
-            Hora: {{desf.Hora}}
-            <br> Hora prevista de salida: {{desf.HoraSalida}}
+            Hora: {{desf.Hora}}<br>
+            Hora prevista de salida: {{desf.HoraSalida}}<br>
+            <div *ngIf="desf.Bloque != 0">
+                Bloque: {{desf.Bloque}} Fila: {{desf.Fila}}
+            </div>
+            En {{desf.Lugar}}            
           </ion-card-content>
         </ion-card>
       </div>

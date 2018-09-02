@@ -1,0 +1,40 @@
+page-desfile {
+    .card-title-md {
+        color: rgb(0, 101, 53);
+        border-bottom: 1px solid rgb(0, 101, 53);
+        padding-bottom: 2px;
+        font-size: 20px;
+    }
+    .card-content-md {
+        background-color: white;
+        color: rgb(0, 101, 53);
+        position: relative;
+    }
+    .desfile-card-box {
+        padding-top: 10px;
+        font-size: 16px;
+    }
+    .num-dia {
+        position: absolute; 
+        color: rgb(0, 101, 53);
+        right:0px;
+        font-size: 50px;
+        background-color:  white;
+        top: 0px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    img {
+        max-width: 10%;
+        border: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .toolbar-md {
+        padding: 1px;
+        min-height: 40px;
+    }
+    
+
+}
